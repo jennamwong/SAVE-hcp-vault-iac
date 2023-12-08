@@ -11,6 +11,7 @@ resource "hcp_vault_cluster" "learn_hcp_vault" {
   # public_endpoint = true
 }
 
+## VPC Peering ##
 resource "aws_vpc" "peer" {
   cidr_block = "172.31.0.0/16"
 }
