@@ -19,7 +19,9 @@ terraform {
   }
 }
 
-provider "hcp" {}
+provider "hcp" {
+  project_id = "a167f67a-dceb-4079-9380-f9348cad8983"
+}
 
 provider "aws" {
   region = var.region
