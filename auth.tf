@@ -12,7 +12,7 @@ resource "vault_auth_backend" "github" {
 
 resource "vault_github_auth_backend" "github" {
   organization = "IAC-Project-SAVE"
-
+}
 #---------changes----------
 
 resource "vault_auth_backend" "userpass" {
