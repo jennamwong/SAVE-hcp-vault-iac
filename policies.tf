@@ -31,36 +31,36 @@ resource "vault_policy" "user_policy_ve_academy" {
 
 resource "vault_policy" "user_policy_ve_CDL" {
   name   = "users"
-  namespace = vault_namespace.value-engineering.CDL.path
+  namespace = vault_namespace.CDL.path
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_ve_HVD" {
   name   = "users"
-  namespace = vault_namespace.value-engineering.HVD.path
+  namespace = vault_namespace.HVD.path
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_sea_se" {
   name   = "users"
-  namespace = vault_namespace.SEA.SE.path
+  namespace = vault_namespace.SE.path
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_sea_sa" {
   name   = "users"
-  namespace = vault_namespace.SEA.SA.path
+  namespace = vault_namespace.SA.path
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_cs_enterprise" {
   name   = "users"
-  namespace = vault_namespace.customer-success.enterprise.path
+  namespace = vault_namespace.enterprise.path
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_cs_global" {
   name   = "users"
-  namespace = vault_namespace.customer-success.global.path
+  namespace = vault_namespace.global.path
   policy = file("policies/user-policy.hcl")
 }
