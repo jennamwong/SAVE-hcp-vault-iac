@@ -25,42 +25,42 @@ resource "vault_policy" "admin_policy_cs" {
 #---------changes----------
 resource "vault_policy" "user_policy_ve_academy" {
   name   = "users"
-  namespace = vault_namespace.academy.path
+  namespace = vault_namespace.value-engineering.path_fq
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_ve_CDL" {
   name   = "users"
-  namespace = vault_namespace.CDL.path
+  namespace = vault_namespace.value-engineering.path_fq
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_ve_HVD" {
   name   = "users"
-  namespace = vault_namespace.HVD.path
+  namespace = vault_namespace.value-engineering.path_fq
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_sea_se" {
   name   = "users"
-  namespace = vault_namespace.SE.path
+  namespace = vault_namespace.SEA.path_fq
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_sea_sa" {
   name   = "users"
-  namespace = vault_namespace.SA.path
+  namespace = vault_namespace.SEA.path_fq
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_cs_enterprise" {
   name   = "users"
-  namespace = vault_namespace.enterprise.path
+  namespace = vault_namespace.customer-success.path_fq
   policy = file("policies/user-policy.hcl")
 }
 
 resource "vault_policy" "user_policy_cs_global" {
   name   = "users"
-  namespace = vault_namespace.global.path
+  namespace = vault_namespace.customer-success.path_fq
   policy = file("policies/user-policy.hcl")
 }
