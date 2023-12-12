@@ -25,7 +25,7 @@ resource "vault_policy" "admin_policy_cs" {
 #---------changes----------
 resource "vault_policy" "user_policy_ve_academy" {
   name   = "users"
-  namespace = vault_namespace.value-engineering.academy.path
+  namespace = vault_namespace.academy.path
   policy = file("policies/user-policy.hcl")
 }
 
