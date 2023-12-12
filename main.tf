@@ -33,4 +33,5 @@ provider "aws" {
 }
 
 provider "vault" {
+  address = "https://hcp-vault-cluster-public-vault-7b9f9719.9086a747.z1.hashicorp.cloud:8200"
 }
