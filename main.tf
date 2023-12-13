@@ -33,7 +33,8 @@ provider "aws" {
 }
 
 provider "vault" {
-  address = "https://hcp-vault-cluster-public-vault-7b9f9719.9086a747.z1.hashicorp.cloud:8200"
+  # address = "https://hcp-vault-cluster-public-vault-7b9f9719.9086a747.z1.hashicorp.cloud:8200"
 
+  address = hcp_vault_cluster.learn_hcp_vault.vault_private_endpoint_url
   token = hcp_vault_cluster_admin_token.learn_hcp_vault_token.token
 }
