@@ -39,3 +39,7 @@ resource "aws_vpc_peering_connection_accepter" "peer" {
   vpc_peering_connection_id = hcp_aws_network_peering.peer.provider_peering_id
   auto_accept               = true
 }
+
+resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
+  cluster_id = hcp_vault_cluster.learn_hcp_vault.cluster_id
+}
