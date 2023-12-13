@@ -1,97 +1,97 @@
-// #---------changes----------
+// // #---------changes----------
 
-path "admin/value-engineering/academy"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-path "admin/value-engineering/CDL"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-path "admin/value-engineering/HVD"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-path "admin/SEA/SE"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-path "admin/SEA/SA"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-path "admin/customer-success/enterprise"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-path "admin/customer-success/global"
-{
-    capabilities = {["create", "read", "update", "list"]}
-}
-
-
-// # Manage auth methods broadly across Vault
-// path "auth/*"
+// path "admin/value-engineering/academy"
 // {
-//   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # Create, update, and delete auth methods
-// path "sys/auth/*"
+// path "admin/value-engineering/CDL"
 // {
-//   capabilities = ["create", "update", "delete", "sudo"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # List auth methods
-// path "sys/auth"
+// path "admin/value-engineering/HVD"
 // {
-//   capabilities = ["read"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # Create and manage ACL policies
-// path "sys/policies/acl/*"
+// path "admin/SEA/SE"
 // {
-//   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # List ACL policies
-// path "sys/policies/acl"
+// path "admin/SEA/SA"
 // {
-//   capabilities = ["list"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # Create and manage secrets engines broadly across Vault.
-// path "sys/mounts/*"
+// path "admin/customer-success/enterprise"
 // {
-//   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # List enabled secrets engines
-// path "sys/mounts"
+// path "admin/customer-success/global"
 // {
-//   capabilities = ["read", "list"]
+//     capabilities = {["create", "read", "update", "list"]}
 // }
 
-// # List, create, update, and delete key/value secrets at secret/
-// path "secret/*"
-// {
-//   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
-// }
 
-// # Manage transit secrets engine
-// path "transit/*"
-// {
-//   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
-// }
+// // # Manage auth methods broadly across Vault
+// // path "auth/*"
+// // {
+// //   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+// // }
 
-// # Read health checks
-// path "sys/health"
-// {
-//   capabilities = ["read", "sudo"]
-// }
+// // # Create, update, and delete auth methods
+// // path "sys/auth/*"
+// // {
+// //   capabilities = ["create", "update", "delete", "sudo"]
+// // }
+
+// // # List auth methods
+// // path "sys/auth"
+// // {
+// //   capabilities = ["read"]
+// // }
+
+// // # Create and manage ACL policies
+// // path "sys/policies/acl/*"
+// // {
+// //   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+// // }
+
+// // # List ACL policies
+// // path "sys/policies/acl"
+// // {
+// //   capabilities = ["list"]
+// // }
+
+// // # Create and manage secrets engines broadly across Vault.
+// // path "sys/mounts/*"
+// // {
+// //   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+// // }
+
+// // # List enabled secrets engines
+// // path "sys/mounts"
+// // {
+// //   capabilities = ["read", "list"]
+// // }
+
+// // # List, create, update, and delete key/value secrets at secret/
+// // path "secret/*"
+// // {
+// //   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+// // }
+
+// // # Manage transit secrets engine
+// // path "transit/*"
+// // {
+// //   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+// // }
+
+// // # Read health checks
+// // path "sys/health"
+// // {
+// //   capabilities = ["read", "sudo"]
+// // }
