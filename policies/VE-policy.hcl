@@ -1,3 +1,4 @@
+# High Level Policy
 # Manage auth methods broadly across Vault
 path "auth/*"
 {

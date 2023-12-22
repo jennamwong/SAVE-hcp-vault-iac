@@ -17,4 +17,5 @@
 
 resource "vault_github_auth_backend" "github" {
   organization = "hashicorp"
+  namespace = "SEA"
 }
