@@ -59,6 +59,6 @@ path "sys/health"
   capabilities = ["read"]
 }
 
-path "sys/namespaces/*" {
+path "SEA/sys/namespaces/*" {
    capabilities = ["read", "list"]
 }
