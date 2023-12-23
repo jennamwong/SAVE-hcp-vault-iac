@@ -59,6 +59,14 @@ path "sys/health"
   capabilities = ["read"]
 }
 
-path "SEA/sys/namespaces/*" {
-   capabilities = ["read", "list"]
+# Manage SEA Namespace Policy
+path "sys/namespaces/SEA/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list"]
+}
+
+# List SEA Namespace
+path "sys/namespaces/SEA"
+{
+  capabilities = ["read", "list"]
 }
