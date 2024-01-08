@@ -61,5 +61,5 @@ path "CS/sys/health"
 
 # Manage namespaces
 path "sys/namespaces/*" {
-   capabilities = ["read"]
+   capabilities = ["read", "list"]
 }
