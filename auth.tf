@@ -5,7 +5,7 @@ resource "vault_auth_backend" "userpass" {
 
 resource "vault_generic_endpoint" "u1" {
   depends_on           = [vault_auth_backend.userpass]
-  path                 = "auth/customer-success/userpass/users/admin"
+  path                 = "customer-success/auth/userpass/users/admin"
   ignore_absent_fields = true
 
   data_json = <<EOT
