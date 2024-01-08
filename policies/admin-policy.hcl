@@ -33,7 +33,3 @@ path "auth/token/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
-# Manage secrets at 'SEA'
-path "SEA/*" {
-   capabilities = ["create", "read", "update", "delete", "list"]
-}

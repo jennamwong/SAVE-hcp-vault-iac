@@ -1,72 +1,60 @@
 # Medium Level Policy
 # Read and list operations on auth paths
-path "auth/*"
+path "SEA/auth/*"
 {
   capabilities = ["read", "list"]
 }
 
 # Read operation on sys/auth paths
-path "sys/auth/*"
+path "SEA/sys/auth/*"
 {
   capabilities = ["read"]
 }
 
 # No capabilities on sys/auth path
-path "sys/auth"
+path "SEA/sys/auth"
 {
   capabilities = []
 }
 
 # Read and list operations on sys/policies/acl paths
-path "sys/policies/acl/*"
+path "SEA/sys/policies/acl/*"
 {
   capabilities = ["read", "list"]
 }
 
 # List operation on sys/policies/acl path
-path "sys/policies/acl"
+path "SEA/sys/policies/acl"
 {
   capabilities = ["list"]
 }
 
 # Read and list operations on sys/mounts paths
-path "sys/mounts/*"
+path "SEA/sys/mounts/*"
 {
   capabilities = ["read", "list"]
 }
 
 # Read and list operations on sys/mounts path
-path "sys/mounts"
+path "SEA/sys/mounts"
 {
   capabilities = ["read", "list"]
 }
 
 # Read and list operations on secret paths
-path "secret/*"
+path "SEA/secret/*"
 {
   capabilities = ["read", "list"]
 }
 
 # Read and list operations on transit paths
-path "transit/*"
+path "SEA/transit/*"
 {
   capabilities = ["read", "list"]
 }
 
 # Read operation on sys/health path
-path "sys/health"
+path "SEA/sys/health"
 {
   capabilities = ["read"]
-}
-
-# Manage SEA Namespace Policy
-path "sys/namespaces/SEA/*"
-{
-  capabilities = ["create", "read", "update", "delete", "list"]
-}
-
-# List SEA Namespace
-path "sys/namespaces/SEA"
-{
-  capabilities = ["read", "list"]
 }

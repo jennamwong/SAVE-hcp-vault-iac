@@ -1,60 +1,60 @@
 # Low Level Policy
 # Read operations on auth paths
-path "auth/*"
+path "CS/auth/*"
 {
   capabilities = ["read"]
 }
 
 # No capabilities on sys/auth paths
-path "sys/auth/*"
+path "CS/sys/auth/*"
 {
   capabilities = []
 }
 
 # No capabilities on sys/auth path
-path "sys/auth"
+path "CS/sys/auth"
 {
   capabilities = []
 }
 
 # Read and list operations on sys/policies/acl paths
-path "sys/policies/acl/*"
+path "CS/sys/policies/acl/*"
 {
   capabilities = ["read", "list"]
 }
 
 # List operation on sys/policies/acl path
-path "sys/policies/acl"
+path "CS/sys/policies/acl"
 {
   capabilities = ["list"]
 }
 
 # Read operation on sys/mounts paths
-path "sys/mounts/*"
+path "CS/sys/mounts/*"
 {
   capabilities = ["read"]
 }
 
 # Read operation on sys/mounts path
-path "sys/mounts"
+path "CS/sys/mounts"
 {
   capabilities = ["read"]
 }
 
 # Read operation on secret paths
-path "secret/*"
+path "CS/secret/*"
 {
   capabilities = ["read"]
 }
 
 # Read operation on transit paths
-path "transit/*"
+path "CS/transit/*"
 {
   capabilities = ["read"]
 }
 
 # Read operation on sys/health path
-path "sys/health"
+path "CS/sys/health"
 {
   capabilities = ["read"]
 }

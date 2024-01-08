@@ -1,21 +1,19 @@
-# resource "vault_auth_backend" "userpass" {
-#   type = "userpass"
-# }
-
-# resource "vault_generic_endpoint" "u1" {
-#   depends_on           = [vault_auth_backend.userpass]
-#   path                 = "auth/userpass/users/u1"
-#   ignore_absent_fields = true
-
-#   data_json = <<EOT
-# {
-#   "policies": ["user-policy"],
-#   "password": "changeme"
-# }
-# EOT
-# }
-
-resource "vault_github_auth_backend" "github" {
-  organization = "hashicorp"
-  namespace = "SEA"
+resource "vault_auth_backend" "userpass" {
+  type = "userpass"
 }
+
+resource "vault_generic_endpoint" "u1" {
+  depends_on           = [vault_auth_backend.userpass]
+  path                 = "auth/userpass/users/admin"
+  ignore_absent_fields = true
+
+  data_json = <<EOT
+{
+  "policies": ["CS-policy"],
+  "password": "admin"
+}
+EOT
+}
+
+
+
