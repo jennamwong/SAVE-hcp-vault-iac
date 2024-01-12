@@ -39,16 +39,10 @@ path "secret/*"
 {
   capabilities = ["create", "read", "update", "delete", "list"] 
 }
- 
-// # Allow managing leases
-// path "sys/leases/*"
-// {
-//   capabilities = ["read", "update", "list"]
-// }
 
 # Manage namespaces
 path "sys/namespaces/*" {
-   capabilities = ["create", "read", "update", "delete", "list"]
+   capabilities = ["create", "read", "update", "delete", "list, sudo"]
 }
 
 # Manage secrets engines
@@ -61,16 +55,4 @@ path "sys/mounts/*"
 path "sys/mounts"
 {
   capabilities = ["read"]
-}
-
-// # Configure License
-// path "sys/license"
-// {
-//   capabilities = ["create", "read", "update", "delete", "list"] 
-// }
-
-# Configure Vault UI
-path "sys/config/ui"
-{
-  capabilities = ["read", "update", "delete", "list"] 
 }
