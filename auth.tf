@@ -15,7 +15,7 @@ resource "vault_generic_endpoint" "u1" {
 EOT
 }
 
-resource "vault_generic_endpoint" "u1" {
+resource "vault_generic_endpoint" "u2" {
   depends_on           = [vault_auth_backend.userpass]
   path                 = "VE/auth/userpass/users/admin"
   ignore_absent_fields = true
