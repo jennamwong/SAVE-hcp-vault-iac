@@ -70,7 +70,7 @@
 #   policy = file("policies/CS-policy.hcl")
 # }
 
-resource "vault_policy" "super_admin" {
-    name   = "super-admin-policy"
-    policy = file("policies/super-admin-policy.hcl")
-}
+# resource "vault_policy" "super_admin" {
+#     name   = "super-admin-policy"
+#     policy = file("policies/super-admin-policy.hcl")
+# }
