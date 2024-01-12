@@ -42,7 +42,7 @@ path "secret/*"
 
 # Manage namespaces
 path "sys/namespaces/*" {
-   capabilities = ["create", "read", "update", "delete", "list, sudo"]
+   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
 # Manage secrets engines
