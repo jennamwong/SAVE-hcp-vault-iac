@@ -72,6 +72,6 @@
 
 resource "vault_policy" "super_admin" {
     name   = "super-admin-policy"
-    policy = file("super-admin-policy.hcl")
+    policy = file("polices/super-admin-policy.hcl")
     namespace   = "admin"
 }
