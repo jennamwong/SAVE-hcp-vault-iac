@@ -70,3 +70,8 @@
 #   policy = file("policies/CS-policy.hcl")
 # }
 
+resource "vault_policy" "super_admin" {
+    name   = "super-admin-policy"
+    policy = file("super-admin-policy.hcl")
+    namespace   = "admin"
+}

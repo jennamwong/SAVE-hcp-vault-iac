@@ -1,6 +1,6 @@
 # Defines a Vault namespace for "value-engineering" with the path "value-engineering".
-resource "vault_namespace" "value-engineering" {
-  path = "value-engineering"
+resource "vault_namespace" "VE" {
+  path = "VE"
 }
 
 # Defines a Vault namespace for "SEA" with the path "SEA".
@@ -9,25 +9,25 @@ resource "vault_namespace" "SEA" {
 }
 
 # Defines a Vault namespace for "customer-success" with the path "customer-success".
-resource "vault_namespace" "customer-success" {
-  path = "customer-success"
+resource "vault_namespace" "CS" {
+  path = "CS"
 }
 
 # Defines a Vault namespace for "academy" within the "value-engineering" namespace.
-resource "vault_namespace" "academy" {
-  namespace = vault_namespace.value-engineering.path
-  path      = "academy"
+resource "vault_namespace" "ACA" {
+  namespace = vault_namespace.VE.path
+  path      = "ACA"
 }
 
 # Defines a Vault namespace for "CDL" within the "value-engineering" namespace.
 resource "vault_namespace" "CDL" {
-  namespace = vault_namespace.value-engineering.path
+  namespace = vault_namespace.VE.path
   path      = "CDL"
 }
 
 # Defines a Vault namespace for "HVD" within the "value-engineering" namespace.
 resource "vault_namespace" "HVD" {
-  namespace = vault_namespace.value-engineering.path
+  namespace = vault_namespace.VE.path
   path      = "HVD"
 }
 
@@ -44,13 +44,13 @@ resource "vault_namespace" "SA" {
 }
 
 # Defines a Vault namespace for "enterprise" within the "customer-success" namespace.
-resource "vault_namespace" "enterprise" {
-  namespace = vault_namespace.customer-success.path
-  path      = "enterprise"
+resource "vault_namespace" "ENT" {
+  namespace = vault_namespace.CS.path
+  path      = "ENT"
 }
 
 # Defines a Vault namespace for "global" within the "customer-success" namespace.
-resource "vault_namespace" "global" {
-  namespace = vault_namespace.customer-success.path
-  path      = "global"
+resource "vault_namespace" "GLO" {
+  namespace = vault_namespace.CS.path
+  path      = "GLO"
 }
