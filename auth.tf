@@ -1,5 +1,6 @@
 resource "vault_auth_backend" "userpass" {
   type = "userpass"
+  path = "auth/userpass"
 }
 
 resource "vault_generic_endpoint" "u1" {
