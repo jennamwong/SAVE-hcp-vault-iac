@@ -10,7 +10,7 @@ resource "vault_generic_endpoint" "u1" {
 
   data_json = <<EOT
 {
-  "policies": ["CS-policy"],
+  "policies": ["super-admin-policy"],
   "password": "admin"
 }
 EOT
