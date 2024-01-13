@@ -24,6 +24,7 @@ resource "vault_generic_endpoint" "u2" {
   depends_on           = [vault_auth_backend.userpass_ve]
   path                 = "auth/userpass/users/veuser"
   ignore_absent_fields = true
+  namespace = "VE"
 
   data_json = <<EOT
 {
