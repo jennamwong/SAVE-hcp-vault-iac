@@ -38,7 +38,7 @@ resource "vault_generic_endpoint" "u2" {
 
   data_json = <<EOT
 {
-  "policies": ["VE-policy-senior"]
+  "policies": ["VE-policy-senior"],
   "password": "test"
 }
 EOT
