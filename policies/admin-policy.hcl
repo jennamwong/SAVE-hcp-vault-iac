@@ -41,14 +41,14 @@ path "secret/*"
 }
 
 # Manage namespaces
-path "sys/namespaces/*" {
-   capabilities = ["create", "read", "update", "delete", "list"]
+path "sys/namespaces/admin/*" {
+   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
 # Manage secrets engines
 path "sys/mounts/*"
 {
-  capabilities = ["create", "read", "update", "delete", "list", "sudo"] 
+  capabilities = ["create", "read", "update", "delete", "list"] 
 }
 
 # List existing secrets engines. 
