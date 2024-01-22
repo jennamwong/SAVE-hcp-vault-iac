@@ -41,8 +41,20 @@ path "secret/*"
 }
 
 # Manage namespaces
-path "sys/namespaces/admin/*" {
+path "sys/namespaces/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+
+path "VE/*" {
+   capabilities = ["create", "read", "update", "delete", "list"]
+}
+
+path "SEA/*" {
+   capabilities = ["create", "read", "update", "delete", "list"]
+}
+
+path "CS/*" {
+   capabilities = ["create", "read", "update", "delete", "list"]
 }
 
 # Manage secrets engines
@@ -55,4 +67,9 @@ path "sys/mounts/*"
 path "sys/mounts"
 {
   capabilities = ["read"]
+}
+
+# Manage namespaces
+path "admin/VE/*" {
+   capabilities = ["list", "read", "update"]
 }
