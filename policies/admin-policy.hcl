@@ -41,7 +41,7 @@ path "secret/*"
 }
 
 # Manage namespaces
-path "sys/namespaces/*" {
+path "sys/namespaces/admin/*" {
    capabilities = ["create", "read", "update", "delete", "list", "sudo"]
 }
 
