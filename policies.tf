@@ -21,9 +21,9 @@ resource "vault_policy" "VE-junior" {
     policy = file("policies/VE-policy-junior.hcl")
 }
 
-# resource "vault_egp_policy" "preventkvv1" {
-#   name              = "prevent-kv-v1-engines"
-#   paths             = ["admin"]
-#   enforcement_level = "hard-mandatory"
-#   policy = file("policies/prevent-kv-v1-engines.sentinel")
-# }
+resource "vault_egp_policy" "preventkvv1" {
+  name              = "prevent-kv-v1-engines"
+  paths             = ["admin"]
+  enforcement_level = "hard-mandatory"
+  policy = file("policies/prevent-kv-v1-engines.sentinel")
+}
