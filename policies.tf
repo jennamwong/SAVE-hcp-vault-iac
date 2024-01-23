@@ -6,7 +6,7 @@ resource "vault_policy" "super-policy" {
 resource "vault_policy" "VE-admin" {
     name   = "ve-admin"
     namespace = "VE"
-    policy = file("policies/VE-admin.hcl")
+    policy = file("policies/generic-admin.hcl")
 }
 
 resource "vault_policy" "VE-senior" {
