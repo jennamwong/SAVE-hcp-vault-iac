@@ -2,20 +2,20 @@ resource "vault_auth_backend" "userpass" {
   type = "userpass"
 }
 
-resource "vault_auth_backend" "userpass_ve" {
-  type = "userpass"
-  namespace = "VE"
-}
+# resource "vault_auth_backend" "userpass_ve" {
+#   type = "userpass"
+#   namespace = "VE"
+# }
 
-resource "vault_auth_backend" "userpass_sea" {
-  type = "userpass"
-  namespace = "SEA"
-}
+# resource "vault_auth_backend" "userpass_sea" {
+#   type = "userpass"
+#   namespace = "SEA"
+# }
 
-resource "vault_auth_backend" "userpass_cs" {
-  type = "userpass"
-  namespace = "CS"
-}
+# resource "vault_auth_backend" "userpass_cs" {
+#   type = "userpass"
+#   namespace = "CS"
+# }
 
 resource "vault_generic_endpoint" "u1" {
   depends_on           = [vault_auth_backend.userpass]
