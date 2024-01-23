@@ -68,3 +68,8 @@ path "sys/mounts"
 {
   capabilities = ["read"]
 }
+
+path "kv/*"
+{
+  capabilities = ["create", "read", "update", "delete", "list"]
+}
