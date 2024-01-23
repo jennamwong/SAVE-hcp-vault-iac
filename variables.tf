@@ -25,7 +25,8 @@ variable "cluster_id" {
 variable "tier" {
   description = "Tier of the HCP Vault cluster. Valid options for tiers."
   type        = string
-  default     = "plus_small"
+  # default     = "plus_small"
+  default     = "dev"
 }
 
 variable "peering_id" {
