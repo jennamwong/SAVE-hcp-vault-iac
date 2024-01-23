@@ -1,5 +1,5 @@
-resource "vault_policy" "testadminpolicy" {
-     name   = "testadminpolicy"
+resource "vault_policy" "super_admin" {
+     name   = "super_admin"
      policy = file("policies/super_admin.hcl")
  }
 
