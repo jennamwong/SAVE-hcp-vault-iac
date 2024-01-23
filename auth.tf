@@ -32,13 +32,13 @@ EOT
 
 resource "vault_generic_endpoint" "u2" {
   depends_on           = [vault_auth_backend.userpass_ve]
-  path                 = "auth/userpass/users/cdlsenior"
+  path                 = "auth/userpass/users/vesenior"
   ignore_absent_fields = true
-  namespace = "CDL"
+  namespace = "VE"
 
   data_json = <<EOT
 {
-  "policies": ["CDL-policy-senior"],
+  "policies": ["VE-policy-senior"],
   "password": "test"
 }
 EOT
@@ -46,13 +46,13 @@ EOT
 
 resource "vault_generic_endpoint" "u3" {
   depends_on           = [vault_auth_backend.userpass_ve]
-  path                 = "auth/userpass/users/cdljunior"
+  path                 = "auth/userpass/users/vejunior"
   ignore_absent_fields = true
-  namespace = "CDL"
+  namespace = "VE"
 
   data_json = <<EOT
 {
-  "policies": ["CDL-policy-junior"],
+  "policies": ["VE-policy-junior"],
   "password": "test"
 }
 EOT
