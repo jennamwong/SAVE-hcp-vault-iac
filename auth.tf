@@ -2,10 +2,10 @@ resource "vault_auth_backend" "userpass" {
   type = "userpass"
 }
 
-# resource "vault_auth_backend" "userpass_ve" {
-#   type = "userpass"
-#   namespace = "VE"
-# }
+resource "vault_auth_backend" "userpass_ve" {
+  type = "userpass"
+  namespace = "VE"
+}
 
 # resource "vault_auth_backend" "userpass_sea" {
 #   type = "userpass"
