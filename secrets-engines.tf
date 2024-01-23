@@ -1,13 +1,13 @@
-# resource "vault_mount" "kvv2-example" {
-#   path        = "version2-example"
-#   namespace   = "admin"
-#   type        = "kv-v2"
-#   options = {
-#     version = "2"
-#     type    = "kv-v2"
-#   }
-#   description = "This is an example KV Version 2 secret engine mount"
-# }
+resource "vault_mount" "kvv2-example" {
+  path        = "version2-example"
+  namespace   = "CDL"
+  type        = "kv-v2"
+  options = {
+    version = "2"
+    type    = "kv-v2"
+  }
+  description = "This is an example KV Version 2 secret engine mount"
+}
 
 resource "vault_mount" "transit-example" {
   path        = "transit-example"
@@ -20,12 +20,12 @@ resource "vault_mount" "transit-example" {
   }
 }
 
-# resource "vault_mount" "pki-example" {
-#   path        = "pki-example"
-#   namespace   = "CDL"
-#   type        = "pki"
-#   description = "This is an example PKI mount"
+resource "vault_mount" "pki-example" {
+  path        = "pki-example"
+  namespace   = "admin"
+  type        = "pki"
+  description = "This is an example PKI mount"
 
-#   default_lease_ttl_seconds = 3600
-#   max_lease_ttl_seconds     = 86400
-# }
+  default_lease_ttl_seconds = 3600
+  max_lease_ttl_seconds     = 86400
+}
