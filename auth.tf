@@ -44,17 +44,17 @@ resource "vault_generic_endpoint" "u2" {
 EOT
 }
 
-resource "vault_generic_endpoint" "u3" {
-  depends_on           = [vault_auth_backend.userpass_ve]
-  path                 = "auth/userpass/users/vejunior"
-  ignore_absent_fields = true
-  namespace = "VE"
+# resource "vault_generic_endpoint" "u3" {
+#   depends_on           = [vault_auth_backend.userpass_ve]
+#   path                 = "auth/userpass/users/vejunior"
+#   ignore_absent_fields = true
+#   namespace = "VE"
 
-  data_json = <<EOT
-{
-  "policies": ["VE-policy-junior"],
-  "password": "test"
-}
-EOT
-}
+#   data_json = <<EOT
+# {
+#   "policies": ["VE-policy-junior"],
+#   "password": "test"
+# }
+# EOT
+# }
 
