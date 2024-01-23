@@ -23,7 +23,7 @@ resource "vault_policy" "VE-junior" {
 
 resource "vault_egp_policy" "preventkvv1" {
   name              = "prevent-kv-v1-engines"
-  paths             = ["*"]
+  paths             = ["/sys/mounts"]
   enforcement_level = "hard-mandatory"
   policy = file("policies/prevent-kv-v1-engines.sentinel")
 }
