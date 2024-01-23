@@ -68,8 +68,3 @@ path "sys/mounts"
 {
   capabilities = ["read"]
 }
-
-// # Manage namespaces
-// path "admin/VE/*" {
-//    capabilities = ["list", "read", "update"]
-// }

@@ -7,24 +7,24 @@ resource "vault_auth_backend" "userpass_ve" {
   namespace = "VE"
 }
 
-# resource "vault_auth_backend" "userpass_sea" {
-#   type = "userpass"
-#   namespace = "SEA"
-# }
+resource "vault_auth_backend" "userpass_sea" {
+  type = "userpass"
+  namespace = "SEA"
+}
 
-# resource "vault_auth_backend" "userpass_cs" {
-#   type = "userpass"
-#   namespace = "CS"
-# }
+resource "vault_auth_backend" "userpass_cs" {
+  type = "userpass"
+  namespace = "CS"
+}
 
 resource "vault_generic_endpoint" "u1" {
   depends_on           = [vault_auth_backend.userpass]
-  path                 = "auth/userpass/users/testadmin"
+  path                 = "auth/userpass/users/super"
   ignore_absent_fields = true
 
   data_json = <<EOT
 {
-  "policies": ["testadminpolicy"],
+  "policies": ["super_admin"],
   "password": "test"
 }
 EOT

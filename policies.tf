@@ -1,6 +1,6 @@
 resource "vault_policy" "testadminpolicy" {
      name   = "testadminpolicy"
-     policy = file("policies/testadminpolicy.hcl")
+     policy = file("policies/super_admin.hcl")
  }
 
 # resource "vault_policy" "veuser" {
