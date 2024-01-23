@@ -1,6 +1,6 @@
 resource "vault_mount" "kvv2-example" {
   path        = "version2-example"
-  namespace = "admin"
+  namespace   = "admin"
   type        = "kv-v2"
   options = {
     version = "2"
@@ -11,7 +11,7 @@ resource "vault_mount" "kvv2-example" {
 
 resource "vault_mount" "transit-example" {
   path        = "transit-example"
-  namespace = "VE"
+  namespace   = "VE"
   type        = "transit"
   description = "This is an example transit secret engine mount"
 
@@ -22,7 +22,7 @@ resource "vault_mount" "transit-example" {
 
 resource "vault_mount" "pki-example" {
   path        = "pki-example"
-  namespace = "CDL"
+  namespace   = "CDL"
   type        = "pki"
   description = "This is an example PKI mount"
 
