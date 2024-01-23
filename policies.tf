@@ -1,6 +1,6 @@
-resource "vault_policy" "super-admin" {
-     name   = "super-admin"
-     policy = file("policies/super-admin.hcl")
+resource "vault_policy" "super-policy" {
+     name   = "super-policy"
+     policy = file("policies/super-policy.hcl")
  }
 
 resource "vault_policy" "ve-senior" {
