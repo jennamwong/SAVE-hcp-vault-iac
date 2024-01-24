@@ -22,7 +22,6 @@ resource "vault_mount" "transit-example" {
 
 resource "vault_mount" "pki-example" {
   path        = "pki-example"
-  namespace   = "admin"
   type        = "pki"
   description = "This is an example PKI mount"
 
