@@ -1,5 +1,5 @@
 resource "vault_mount" "kvv2-example" {
-  path        = "version2-example"
+  path        = vault_mount.VE.path
   namespace   = "CDL"
   type        = "kv-v2"
   options = {
