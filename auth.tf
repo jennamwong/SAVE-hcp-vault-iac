@@ -48,58 +48,6 @@ resource "vault_generic_endpoint" "u3" {
 EOT
 }
 
-# -----------------------------
-
-# resource "vault_identity_oidc_key" "test" {
-#   name               = "my-key"
-#   allowed_client_ids = ["*"]
-#   rotation_period    = 3600
-#   verification_ttl   = 3600
-# }
-
-# resource "vault_identity_oidc_assignment" "test" {
-#   name       = "my-assignment"
-#   entity_ids = ["fake-ascbascas-2231a-sdfaa"]
-#   group_ids  = ["fake-sajkdsad-32414-sfsada"]
-# }
-
-# resource "vault_identity_oidc_client" "test" {
-#   name          = "application"
-#   key           = vault_identity_oidc_key.test.name
-#   redirect_uris = [
-#     "http://127.0.0.1:9200/v1/auth-methods/oidc:authenticate:callback",
-#     "http://127.0.0.1:8251/callback",
-#     "http://127.0.0.1:8080/callback"
-#   ]
-#   assignments = [
-#     vault_identity_oidc_assignment.test.name
-#   ]
-#   id_token_ttl     = 2400
-#   access_token_ttl = 7200
-# }
-
-# resource "vault_identity_oidc_scope" "test" {
-#   name        = "groups"
-#   template    = jsonencode(
-#   {
-#     groups = "{{identity.entity.groups.names}}",
-#   }
-#   )
-#   description = "Groups scope."
-# }
-
-# resource "vault_identity_oidc_provider" "test" {
-#   name = "my-provider"
-#   https_enabled = false
-#   issuer_host = "127.0.0.1:8200"
-#   allowed_client_ids = [
-#     vault_identity_oidc_client.test.client_id
-#   ]
-#   scopes_supported = [
-#     vault_identity_oidc_scope.test.name
-#   ]
-# }
-
 resource "vault_jwt_auth_backend" "oidc" {
     description         = "Demonstration of the Terraform JWT auth backend"
     path                = "oidc"
@@ -113,7 +61,7 @@ resource "vault_jwt_auth_backend" "oidc" {
 resource "vault_jwt_auth_backend_role" "example" {
   backend         = vault_jwt_auth_backend.oidc.path
   role_name       = "test-role"
-  token_policies  = ["super-policy"]
+  token_policies  = ["default"]
 
   user_claim            = "email"
   role_type             = "oidc"
@@ -121,4 +69,20 @@ resource "vault_jwt_auth_backend_role" "example" {
     "https://hcp-vault-cluster-public-vault-fea3e4a5.d6db98c2.z1.hashicorp.cloud:8200/ui/vault/auth/oidc/oidc/callback",
     "https://localhost:8250/oidc/callback"
   ]
+}
+
+resource "vault_identity_group" "admins" {
+  name     = "external"
+  type     = "external"
+  policies = ["super-policy"]
+
+  metadata = {
+    version = "1"
+  }
+}
+
+resource "vault_identity_group_alias" "group-alias" {
+  name           = "a3737b99-95f2-442f-94b9-0d2a3e144c67"
+  mount_accessor = vault_jwt_auth_backend.oidc.accessor
+  canonical_id   = vault_identity_group.admins.id
 }
