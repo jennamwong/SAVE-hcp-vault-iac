@@ -7,9 +7,9 @@ resource "hcp_hvn" "learn_hcp_vault_hvn" {
 
 # Create a Vault cluster in HCP
 resource "hcp_vault_cluster" "learn_hcp_vault" {
-  hvn_id     = hcp_hvn.learn_hcp_vault_hvn.hvn_id
-  cluster_id = var.cluster_id
-  tier       = var.tier
+  hvn_id          = hcp_hvn.learn_hcp_vault_hvn.hvn_id
+  cluster_id      = var.cluster_id
+  tier            = var.tier
   public_endpoint = true
 }
 
@@ -25,11 +25,11 @@ data "aws_arn" "peer" {
 
 # Create a network peering connection between the HVN and the AWS VPC
 resource "hcp_aws_network_peering" "peer" {
-  hvn_id              = hcp_hvn.learn_hcp_vault_hvn.hvn_id
-  peering_id          = var.peering_id
-  peer_vpc_id         = aws_vpc.peer.id
-  peer_account_id     = aws_vpc.peer.owner_id
-  peer_vpc_region     = data.aws_arn.peer.region
+  hvn_id          = hcp_hvn.learn_hcp_vault_hvn.hvn_id
+  peering_id      = var.peering_id
+  peer_vpc_id     = aws_vpc.peer.id
+  peer_account_id = aws_vpc.peer.owner_id
+  peer_vpc_region = data.aws_arn.peer.region
 }
 
 # Create a route in the HVN for the network peering connection

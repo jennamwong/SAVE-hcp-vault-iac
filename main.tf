@@ -25,7 +25,7 @@ terraform {
     }
     # The Vault provider is used to manage resources in HashiCorp Vault
     vault = {
-      source = "hashicorp/vault"
+      source  = "hashicorp/vault"
       version = "~> 3.23.0"
     }
   }
