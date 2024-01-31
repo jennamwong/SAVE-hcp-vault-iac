@@ -3,7 +3,7 @@ resource "vault_auth_backend" "userpass" {
 }
 
 resource "vault_auth_backend" "userpass_ve" {
-  type = "userpass"
+  type      = "userpass"
   namespace = "VE"
 }
 
@@ -24,7 +24,7 @@ resource "vault_generic_endpoint" "u2" {
   depends_on           = [vault_auth_backend.userpass_ve]
   path                 = "auth/userpass/users/vesenior"
   ignore_absent_fields = true
-  namespace = "VE"
+  namespace            = "VE"
 
   data_json = <<EOT
 {
@@ -38,7 +38,7 @@ resource "vault_generic_endpoint" "u3" {
   depends_on           = [vault_auth_backend.userpass_ve]
   path                 = "auth/userpass/users/vejunior"
   ignore_absent_fields = true
-  namespace = "VE"
+  namespace            = "VE"
 
   data_json = <<EOT
 {
@@ -49,22 +49,23 @@ EOT
 }
 
 resource "vault_jwt_auth_backend" "oidc" {
-    description         = "Demonstration of the Terraform JWT auth backend"
-    path                = "oidc"
-    type                = "oidc"
-    oidc_discovery_url  = "https://login.microsoftonline.com/237fbc04-c52a-458b-af97-eaf7157c0cd4/v2.0"
-    oidc_client_id      = "552c7f11-47fe-4557-bc7a-aead517d0e6e"
-    oidc_client_secret  = "TUh8Q~vVlG.xJ5PfpfInHpehPX0GVSsLUCzc-con"
-    default_role        = "test-role"
+  description        = "Demonstration of the Terraform JWT auth backend"
+  path               = "oidc"
+  type               = "oidc"
+  oidc_discovery_url = "https://login.microsoftonline.com/237fbc04-c52a-458b-af97-eaf7157c0cd4/v2.0"
+  oidc_client_id     = "552c7f11-47fe-4557-bc7a-aead517d0e6e"
+  oidc_client_secret = "TUh8Q~vVlG.xJ5PfpfInHpehPX0GVSsLUCzc-con"
+  default_role       = "test-role"
 }
 
 resource "vault_jwt_auth_backend_role" "example" {
-  backend         = vault_jwt_auth_backend.oidc.path
-  role_name       = "test-role"
-  token_policies  = ["default"]
+  backend        = vault_jwt_auth_backend.oidc.path
+  role_name      = "test-role"
+  token_policies = ["default"]
 
-  user_claim            = "email"
-  role_type             = "oidc"
+  user_claim   = "sub"
+  groups_claim = "groups"
+  role_type    = "oidc"
   allowed_redirect_uris = [
     "https://hcp-vault-cluster-public-vault-fea3e4a5.d6db98c2.z1.hashicorp.cloud:8200/ui/vault/auth/oidc/oidc/callback",
     "https://localhost:8250/oidc/callback"
