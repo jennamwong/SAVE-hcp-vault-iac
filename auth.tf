@@ -1,12 +1,15 @@
+# Enable the userpass auth method at the default path.
 resource "vault_auth_backend" "userpass" {
   type = "userpass"
 }
 
+# Enable the userpass auth method at the "VE" namespace.
 resource "vault_auth_backend" "userpass_ve" {
   type      = "userpass"
   namespace = "VE"
 }
 
+# Create a user named "super" in the userpass auth method.
 resource "vault_generic_endpoint" "u1" {
   depends_on           = [vault_auth_backend.userpass]
   path                 = "auth/userpass/users/super"
@@ -20,6 +23,7 @@ resource "vault_generic_endpoint" "u1" {
 EOT
 }
 
+# Create a user named "vesenior" in the userpass auth method under the "VE" namespace.
 resource "vault_generic_endpoint" "u2" {
   depends_on           = [vault_auth_backend.userpass_ve]
   path                 = "auth/userpass/users/vesenior"
@@ -34,6 +38,7 @@ resource "vault_generic_endpoint" "u2" {
 EOT
 }
 
+# Create a user named "vejunior" in the userpass auth method under the "VE" namespace.
 resource "vault_generic_endpoint" "u3" {
   depends_on           = [vault_auth_backend.userpass_ve]
   path                 = "auth/userpass/users/vejunior"
@@ -48,6 +53,7 @@ resource "vault_generic_endpoint" "u3" {
 EOT
 }
 
+# Enable the OIDC auth method.
 resource "vault_jwt_auth_backend" "oidc" {
   description        = "Demonstration of the Terraform JWT auth backend"
   path               = "oidc"
@@ -58,6 +64,7 @@ resource "vault_jwt_auth_backend" "oidc" {
   default_role       = "test-role"
 }
 
+# Create a role in the OIDC auth method.
 resource "vault_jwt_auth_backend_role" "example" {
   backend        = vault_jwt_auth_backend.oidc.path
   role_name      = "test-role"
@@ -72,6 +79,7 @@ resource "vault_jwt_auth_backend_role" "example" {
   ]
 }
 
+# Create an external identity group named "external" with the "super-policy" policy.
 resource "vault_identity_group" "admins" {
   name     = "external"
   type     = "external"
@@ -82,6 +90,7 @@ resource "vault_identity_group" "admins" {
   }
 }
 
+# Create an alias for the "external" group in the OIDC auth method.
 resource "vault_identity_group_alias" "group-alias" {
   name           = "a3737b99-95f2-442f-94b9-0d2a3e144c67"
   mount_accessor = vault_jwt_auth_backend.oidc.accessor
