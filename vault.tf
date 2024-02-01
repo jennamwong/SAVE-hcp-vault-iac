@@ -77,3 +77,4 @@ resource "vault_audit" "socket_audit" {
     socket_type = "tcp"
   }
 }
+
