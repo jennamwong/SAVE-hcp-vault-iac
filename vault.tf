@@ -61,7 +61,7 @@ resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
 #   }
 # }
 
-resource "vault_audit" "test" {
+resource "vault_audit" "file_audit" {
   type = "file"
 
   options = {
