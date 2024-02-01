@@ -52,12 +52,11 @@ resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
 }
 
 resource "vault_audit" "http" {
-  type  = "socket"
-  path  = "app_socket"
+  type  = "http"
+  path  = "app_http"
   local = false
 
   options = {
     address     = "https://webhook.site/1731a430-9f85-4b25-90d9-6c3b33038229"
-    method      = "POST"
   }
 }
