@@ -51,7 +51,7 @@ resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
   cluster_id = hcp_vault_cluster.learn_hcp_vault.cluster_id
 }
 
-resource "vault_audit" "http" {
+resource "vault_audit" "example" {
   type  = "http"
   path  = "app_http"
   local = false
