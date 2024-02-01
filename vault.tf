@@ -53,7 +53,7 @@ resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
 
 resource "vault_audit" "example" {
   type  = "http"
-  path  = "app_http"
+  path  = "example"
   local = false
 
   options = {
