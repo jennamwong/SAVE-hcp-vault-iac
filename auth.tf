@@ -96,16 +96,16 @@ resource "vault_identity_group_alias" "group-alias" {
   mount_accessor = vault_jwt_auth_backend.oidc.accessor
   canonical_id   = vault_identity_group.admins.id
 }
- # -----------------------------------------------------------
+# -----------------------------------------------------------
 
 resource "vault_auth_backend" "approle" {
   type = "approle"
 }
 
 resource "vault_approle_auth_backend_role" "jenkins" {
-  backend         = vault_auth_backend.approle.path
-  role_name       = "jenkins"
-  token_policies  = ["jenkins"]
+  backend        = vault_auth_backend.approle.path
+  role_name      = "jenkins"
+  token_policies = ["jenkins"]
 }
 
 resource "vault_approle_auth_backend_role_secret_id" "id" {

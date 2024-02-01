@@ -11,6 +11,12 @@ resource "hcp_vault_cluster" "learn_hcp_vault" {
   cluster_id      = var.cluster_id
   tier            = var.tier
   public_endpoint = true
+  audit_log_config {
+    http_codec       = "JSON"
+    http_compression = "false"
+    http_method      = "POST"
+    http_uri         = "https://webhook.site/defef32c-da76-406e-9d70-553aceacd320"
+  }
 }
 
 # Create a VPC in AWS for peering
@@ -50,31 +56,3 @@ resource "aws_vpc_peering_connection_accepter" "peer" {
 resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
   cluster_id = hcp_vault_cluster.learn_hcp_vault.cluster_id
 }
-
-# resource "vault_audit" "example" {
-#   type  = "http"
-#   path  = "example"
-#   local = false
-
-#   options = {
-#     address = "https://webhook.site/2a11ee41-da3c-4ffe-b43c-78e9b515d288"
-#   }
-# }
-
-# resource "vault_audit" "file_audit" {
-#   type = "file"
-
-#   options = {
-#     file_path = "/Users/syedquadri/Desktop/SAVE-hcp-vault-iac/audit.txt"
-#   }
-# }
-
-resource "vault_audit" "socket_audit" {
-  type = "socket"
-
-  options = {
-    address     = "127.0.0.1:9090"
-    socket_type = "tcp"
-  }
-}
-

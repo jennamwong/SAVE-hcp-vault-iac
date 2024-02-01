@@ -16,7 +16,7 @@ terraform {
     # The HCP provider is used to manage resources in HashiCorp Cloud Platform
     hcp = {
       source  = "hashicorp/hcp"
-      version = "~> 0.77.0"
+      version = "~> 0.82.0"
     }
     # The AWS provider is used to manage resources in Amazon Web Services
     aws = {
