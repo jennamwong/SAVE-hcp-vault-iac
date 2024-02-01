@@ -51,12 +51,20 @@ resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
   cluster_id = hcp_vault_cluster.learn_hcp_vault.cluster_id
 }
 
-resource "vault_audit" "example" {
-  type  = "http"
-  path  = "example"
-  local = false
+# resource "vault_audit" "example" {
+#   type  = "http"
+#   path  = "example"
+#   local = false
+
+#   options = {
+#     address = "https://webhook.site/2a11ee41-da3c-4ffe-b43c-78e9b515d288"
+#   }
+# }
+
+resource "vault_audit" "test" {
+  type = "file"
 
   options = {
-    address = "https://webhook.site/2a11ee41-da3c-4ffe-b43c-78e9b515d288"
+    file_path = "/Users/syedquadri/Desktop/SAVE-hcp-vault-iac/audit.txt"
   }
 }
