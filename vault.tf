@@ -50,3 +50,14 @@ resource "aws_vpc_peering_connection_accepter" "peer" {
 resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
   cluster_id = hcp_vault_cluster.learn_hcp_vault.cluster_id
 }
+
+resource "vault_audit" "http" {
+  type  = "socket"
+  path  = "app_socket"
+  local = false
+
+  options = {
+    address     = "https://webhook.site/1731a430-9f85-4b25-90d9-6c3b33038229"
+    method      = "POST"
+  }
+}
