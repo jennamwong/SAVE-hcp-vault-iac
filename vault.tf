@@ -57,6 +57,6 @@ resource "vault_audit" "http" {
   local = false
 
   options = {
-    address     = "https://webhook.site/1731a430-9f85-4b25-90d9-6c3b33038229"
+    address = "https://webhook.site/2a11ee41-da3c-4ffe-b43c-78e9b515d288"
   }
 }
