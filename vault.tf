@@ -61,10 +61,19 @@ resource "hcp_vault_cluster_admin_token" "learn_hcp_vault_token" {
 #   }
 # }
 
-resource "vault_audit" "file_audit" {
-  type = "file"
+# resource "vault_audit" "file_audit" {
+#   type = "file"
+
+#   options = {
+#     file_path = "/Users/syedquadri/Desktop/SAVE-hcp-vault-iac/audit.txt"
+#   }
+# }
+
+resource "vault_audit" "socket_audit" {
+  type = "socket"
 
   options = {
-    file_path = "/Users/syedquadri/Desktop/SAVE-hcp-vault-iac/audit.txt"
+    address     = "127.0.0.1:9090"
+    socket_type = "tcp"
   }
 }
