@@ -12,10 +12,13 @@ resource "hcp_vault_cluster" "learn_hcp_vault" {
   tier            = var.tier
   public_endpoint = true
   audit_log_config {
-    http_codec       = "JSON"
-    http_compression = "false"
-    http_method      = "POST"
-    http_uri         = "https://webhook.site/defef32c-da76-406e-9d70-553aceacd320"
+    # http_codec       = "JSON"
+    # http_compression = "false"
+    # http_method      = "POST"
+    # http_uri         = "https://webhook.site/defef32c-da76-406e-9d70-553aceacd320"
+    grafana_endpoint = "https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push"
+    grafana_user = "1405963"
+    grafana_password = "glc_eyJvIjoiMTA0NDgyOSIsIm4iOiJzdGFjay04NDc1NjQtaW50ZWdyYXRpb24tcGFzcyIsImsiOiIzc3Z4TzN6VU84RzU0NzhKS3JSMm5KNjEiLCJtIjp7InIiOiJwcm9kLXVzLWVhc3QtMCJ9fQ=="
   }
 }
 
