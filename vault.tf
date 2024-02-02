@@ -17,7 +17,12 @@ resource "hcp_vault_cluster" "learn_hcp_vault" {
     # http_method      = "POST"
     # http_uri         = "https://webhook.site/defef32c-da76-406e-9d70-553aceacd320"
     grafana_endpoint = "https://logs-prod-006.grafana.net"
-    grafana_user = "801973"
+    grafana_user     = "801973"
+    grafana_password = "glc_eyJvIjoiMTA0NDgyOSIsIm4iOiJzdGFjay04NDc1NjQtaW50ZWdyYXRpb24tcGFzcyIsImsiOiIzc3Z4TzN6VU84RzU0NzhKS3JSMm5KNjEiLCJtIjp7InIiOiJwcm9kLXVzLWVhc3QtMCJ9fQ=="
+  }
+  metrics_config {
+    grafana_endpoint = "https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push"
+    grafana_user     = "1405963"
     grafana_password = "glc_eyJvIjoiMTA0NDgyOSIsIm4iOiJzdGFjay04NDc1NjQtaW50ZWdyYXRpb24tcGFzcyIsImsiOiIzc3Z4TzN6VU84RzU0NzhKS3JSMm5KNjEiLCJtIjp7InIiOiJwcm9kLXVzLWVhc3QtMCJ9fQ=="
   }
 }
