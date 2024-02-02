@@ -12,10 +12,11 @@ resource "hcp_vault_cluster" "learn_hcp_vault" {
   tier            = var.tier
   public_endpoint = true
   audit_log_config {
-    # http_codec       = "JSON"
-    # http_compression = "false"
-    # http_method      = "POST"
-    # http_uri         = "https://webhook.site/defef32c-da76-406e-9d70-553aceacd320"
+    http_codec       = "JSON"
+    http_compression = "false"
+    http_method      = "POST"
+    http_uri         = "https://webhook.site/defef32c-da76-406e-9d70-553aceacd320"
+    
     grafana_endpoint = "https://logs-prod-006.grafana.net"
     grafana_user     = "801973"
     grafana_password = "glc_eyJvIjoiMTA0NDgyOSIsIm4iOiJzdGFjay04NDc1NjQtaW50ZWdyYXRpb24tcGFzcyIsImsiOiIzc3Z4TzN6VU84RzU0NzhKS3JSMm5KNjEiLCJtIjp7InIiOiJwcm9kLXVzLWVhc3QtMCJ9fQ=="
