@@ -41,6 +41,11 @@ doormat --version
    4. Replace `grafana_endpoint` `grafana_user` `grafana_password` with your unique values
    5. Click `Logs` near the top
    6. Replace `grafana_endpoint` `grafana_user` `grafana_password` with your unique values
+3. This should auto create a dashboard for you but it doesnt
+    1. Navigate to dashboards
+    2. Click new and import
+    3. Enter `12904` for the ID and Load
+
 
 ## Azure Setup
 
