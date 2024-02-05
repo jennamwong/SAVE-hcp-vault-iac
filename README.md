@@ -46,7 +46,7 @@ doormat --version
 
 ### Requesting AD Access
 
-1. Request access for “Azure Entra ID in HashiCorp02” [here](https://doormat.hashicorp.services/applications/access/az-ad-hashicorp02/role/doormat-azure-ad-hashicorp02-developer-access/options) - more documentation on this can be found [here](https://docs.prod.secops.hashicorp.services/doormat/azure/working_with_ad/)
+1. Request access for `Azure Entra ID in HashiCorp02` [here](https://doormat.hashicorp.services/applications/access/az-ad-hashicorp02/role/doormat-azure-ad-hashicorp02-developer-access/options) - more documentation on this can be found [here](https://docs.prod.secops.hashicorp.services/doormat/azure/working_with_ad/)
 2. You should have access in a few min - navigate to doormat and click console for your new account
 
 ### Inside Azure
@@ -78,15 +78,13 @@ doormat --version
 ### Code editor
 
 1. Navigate to auth.tf
-2. Within the “vault_jwt_auth_backend” resource block
-   - Replace “oidc_client_id” with yours
-   - Replace “oidc_client_secret” with yours
-3. Within the “vault_jwt_auth_backend_role” resource block
-   - Replace the URLs with the ones you saved earlier. (Second one will stay the same)
-4. Within the “vault_identity_group_alias” resource block
-   - Replace “name” with yours
+2. Within the `vault_jwt_auth_backend` resource block
+   - Replace `oidc_client_id` with yours
+   - Replace `oidc_client_secret` with yours
+3. Within the `vault_jwt_auth_backend_role` resource block replace the URLs with the ones you saved earlier. (Second one will stay the same)
+4. Within the `vault_identity_group_alias` resource block replace `name` with yours
 
 ## HCP Vault UI
 
-1. Change login method to “OIDC”
-2. Click “Sign in with OIDC provider”
+1. Change login method to `OIDC`
+2. Click `Sign in with OIDC provider`
