@@ -96,23 +96,26 @@ resource "vault_identity_group_alias" "group-alias" {
   mount_accessor = vault_jwt_auth_backend.oidc.accessor
   canonical_id   = vault_identity_group.admins.id
 }
-# -----------------------------------------------------------
 
+# Enable the AppRole auth method.
 resource "vault_auth_backend" "approle" {
   type = "approle"
 }
 
+# Create a role named "jenkins" in the AppRole auth method.
 resource "vault_approle_auth_backend_role" "jenkins" {
   backend        = vault_auth_backend.approle.path
   role_name      = "jenkins"
   token_policies = ["jenkins"]
 }
 
+# Create a secret ID for the "jenkins" role in the AppRole auth method.
 resource "vault_approle_auth_backend_role_secret_id" "id" {
   backend   = vault_auth_backend.approle.path
   role_name = vault_approle_auth_backend_role.jenkins.role_name
 }
 
+# Log in to the AppRole auth method using the "jenkins" role and the secret ID.
 resource "vault_approle_auth_backend_login" "login" {
   backend   = vault_auth_backend.approle.path
   role_id   = vault_approle_auth_backend_role.jenkins.role_id
