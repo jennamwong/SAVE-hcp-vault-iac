@@ -58,7 +58,7 @@ doormat --version
 5. Save `application client ID` for later. This will be your `oidc_client_id`
 6. Under the manage section on the left
    1. Click `Authentication`
-   2. Add [https://localhost:8250/oidc/callback](https://localhost:8250/oidc/callback) to redirect URL
+   2. Add `https://localhost:8250/oidc/callback` to redirect URL
    3. Copy Vault Cluster public url and modify to look like below and add as redirect url
    ```
    https://hcp-vault-cluster-public-vault-fea3e4a5.d6db98c2.z1.hashicorp.cloud:8200/ui/vault/auth/oidc/oidc/callback
