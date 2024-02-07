@@ -37,7 +37,7 @@ doormat --version
    1. Open this [link](https://webhook.site/)
    2. Replace `http_uri` within the `hcp_vault_cluster` resource in `vault.tf` with your unique URL
 2. Grafana Cloud
-   1. Create a Grafana cloud account
+   1. Create a [Grafana cloud account](https://grafana.com/auth/sign-up/create-user?pg=hp&plcmt=hero-btn1&cta=create-free-account)
    2. In the left navigation go to add new connection and search HCP Vault
    3. Click `Metrics` near the top
    4. Replace `grafana_endpoint` `grafana_user` `grafana_password` with your unique values
