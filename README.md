@@ -1,5 +1,7 @@
 # Infrastructure as Code with TF and HCP Vault
 
+The goal of this project was to employ Terraform to set up a production-ready Vault cluster. This configuration includes policies, secrets engines, and authentication methods for both users and machines. Additionally, the setup incorporates audit logging and metrics, utilizing Grafana Cloud and a generic HTTP sink for monitoring and logging purposes.
+
 ## Doormat Setup
 
 - We have compiled, signed release binaries available on GitHub Releases. Go to the [latest release](https://github.com/hashicorp/doormat-cli/releases/tag/v4.2.0) and download the .tar.gz file as appropriate.
