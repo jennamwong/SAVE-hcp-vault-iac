@@ -32,7 +32,6 @@ variable "tier" {
   description = "Tier of the HCP Vault cluster. Valid options for tiers."
   type        = string
   default     = "plus_small"
-  # default = "dev"
 }
 
 # The ID of the peering connection between the HVN and the AWS VPC.
@@ -47,4 +46,35 @@ variable "route_id" {
   description = "The ID of the HCP HVN route."
   type        = string
   default     = "hvn-route"
+}
+
+variable "grafana_endpoint_logs" {
+  description = "Your Grafana Cloud metrics remote write endpoint"
+  type = string
+  default = ""
+}
+
+variable "grafana_user_logs" {
+  description = "Your Grafana Cloud logs username / instance ID"
+  type = string
+  default = ""
+}
+
+variable "grafana_endpoint_metrics" {
+  description = "Your Grafana Cloud metrics remote write endpoint"
+  type = string
+  default = ""
+}
+
+variable "grafana_user_metrics" {
+  description = "Your Grafana Cloud logs username / instance ID"
+  type = string
+  default = ""
+}
+
+variable "grafana_password" {
+  description = "Your Grafana Cloud logs password"
+  type = string
+  default = ""
+  
 }

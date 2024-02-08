@@ -36,18 +36,22 @@ doormat --version
 1. HTTP Sink
    1. Open this [link](https://webhook.site/)
    2. Replace `http_uri` within the `hcp_vault_cluster` resource in `vault.tf` with your unique URL
+      ![Getting Started](images/URL.png)
 2. Grafana Cloud
    1. Create a [Grafana cloud account](https://grafana.com/auth/sign-up/create-user?pg=hp&plcmt=hero-btn1&cta=create-free-account)
    2. In the left navigation go to add new connection and search HCP Vault
    3. Click `Metrics` near the top
-   4. Replace `grafana_endpoint` `grafana_user` `grafana_password` with your unique values
-   5. Click `Logs` near the top
-   6. Replace `grafana_endpoint` `grafana_user` `grafana_password` with your unique values
+      ![Getting Started](images/metrics.png)
+   4. Navigate to the `variables.tf` file
+   5. Replace the default values of `grafana_endpoint_metrics`, `grafana_user_metrics`, and `grafana_password` with your unique values
+   6. Click `Logs` near the top
+      ![Getting Started](images/logs.png)
+   7. Replace `grafana_endpoint_logs` and `grafana_user_logs` with your unique values. The password will remain the same
 3. This should auto create a dashboard for you but it doesnt
-    1. Navigate to dashboards
-    2. Click new and import
-    3. Enter `12904` for the ID and Load
-
+   1. Navigate to dashboards
+   2. Click new and import
+   3. Enter `12904` for the ID and Load
+   4. Set the Promxy to default and Import
 
 ## Azure Setup
 
